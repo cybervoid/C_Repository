@@ -6,9 +6,9 @@
 
 /* 
  * File:   client.h
- * Author: cybervoid
+ * Author: ryanwemmer
  *
- * Created on July 5, 2018, 8:03 AM
+ * Created on July 6, 2018, 7:36 AM
  */
 
 #ifndef CLIENT_H
