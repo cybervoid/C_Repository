@@ -71,11 +71,32 @@ void start_server()
         perror("bind failed");
         exit(EXIT_FAILURE);
     }
+    /* listen: listens for incoming connection
+     * 
+     *  summary:
+     *      It puts the server socket in a passive mode, where it 
+     *      waits for the client to approach the server to make a 
+     *      connection. The backlog, defines the maximum length to 
+     *      which the queue of pending connections for sockfd may 
+     *      grow. If a connection request arrives when the queue is
+     *      full, the client may receive an error with an indication 
+     *      of ECONNREFUSED.
+     */
     if(listen(socket_fd, 3) < 0)
     {
         perror("listen");
         exit(EXIT_FAILURE);
     }
+    /* Accept: accepts an incoming connection
+     *
+     *  summary: 
+     *      It extracts the first connection request on the queue 
+     *      of pending connections for the listening socket, sockfd,
+     *      creates a new connected socket, and returns a new file 
+     *      descriptor referring to that socket. At this point, 
+     *      connection is established between client and server, and 
+     *      they are ready to transfer data.
+     */
     if ((new_socket = accept(socket_fd, (struct sockaddr *)&address, 
                        (socklen_t*)&addrlen))<0)
     {
