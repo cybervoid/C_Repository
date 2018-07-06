@@ -87,5 +87,5 @@ void start_server()
     printf("%s\n", buffer);
     send(new_socket, hello, strlen(hello), 0);
     printf("hello message sent\n");
-    return 0;
+    return;
 }
