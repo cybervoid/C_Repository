@@ -12,8 +12,9 @@
 #include <string.h>
 #define PORT 8080
 
-void start_server()
+int start_server()
 {
+    printf("starting server");
     int socket_fd; //socket descriptor, an integer (like a file-handle)
     int new_socket; 
     int valread;
@@ -108,5 +109,5 @@ void start_server()
     printf("%s\n", buffer);
     send(new_socket, hello, strlen(hello), 0);
     printf("hello message sent\n");
-    return;
+    return 0;
 }
