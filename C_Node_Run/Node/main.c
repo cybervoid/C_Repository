@@ -20,16 +20,19 @@
  */
 int main(int argc, char** argv) {
 
-    char *arg1 = argv[1];
-    int s = strncmp("c", arg1, 1);
+    char *arg2 = argv[1];
+    int s = strncmp("c", arg2, 1);
     int result;
     if(s = 1)
     {
-        result = start_client();
+        char *arg3 = argv[2];
+        printf("%s\n", arg3);
+        result = start_client(arg3);
     }      
     else 
     {
-        result = printf("\nserver!\n");
+        result = start_server();
+        //result = printf("\nserver!\n");
     }
     printf("Result: %d", result);
     return (EXIT_SUCCESS);

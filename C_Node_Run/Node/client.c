@@ -11,9 +11,9 @@
 #include <netinet/in.h>
 #include <string.h>
 #define PORT 8080
-int start_client() 
+int start_client(char* ip) 
 {
-    printf("starting client");
+    printf("starting client %s", ip);
     struct sockaddr_in address;
     int sock = 0;
     int valread = 0;
@@ -30,7 +30,8 @@ int start_client()
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
     //convert ipv4 and ipv6 addresses from text to binary form
-    if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0) 
+    //int len = sizeof(ip);
+    if(inet_pton(AF_INET, &ip, &serv_addr.sin_addr)<=0) 
     {
         printf("\nInvalid address/ Address not supported \n");
         return -1;
