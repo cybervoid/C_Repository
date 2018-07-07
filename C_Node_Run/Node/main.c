@@ -21,10 +21,15 @@
 int main(int argc, char** argv) {
 
     char *arg2 = argv[1];
-    int s = strncmp("c", arg2, 1);
+    char c = 'c';
+    char input = arg2[0];
+    printf("\n arg2: %s", arg2);
+    //int cmp = strcmp("c", arg2, 1);
+    //printf("\n cmp number: %d", cmp);
     int result;
-    if(s == 1)
+    if(c == input)
     {
+        
         char *arg3 = argv[2];
         printf("%s\n", arg3);
         result = start_client(arg3);
