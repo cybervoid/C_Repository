@@ -54,7 +54,7 @@ dkms.conf
 
 [Pp]rivate/
 nbproject/private/
-build/
+[Bb]uild/
 nbbuild/
 dist/
 nbdist/

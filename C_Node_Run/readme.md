@@ -4,6 +4,13 @@ A workspace for a basic node, using a socket protocol.
 ## Workspace Contents
 Includes basic features necessary for nodes to communicate.
 
+## Building on the Pi
+```
+git clone https://github.com/cybervoid/C_Repository.git
+cd ./C_Repository/Node
+make -f ./Makefile
+
+```
 
 ## References
 1. Sockets   
