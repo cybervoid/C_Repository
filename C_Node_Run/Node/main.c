@@ -22,14 +22,16 @@ int main(int argc, char** argv) {
 
     char *arg1 = argv[1];
     int s = strncmp("c", arg1, 1);
+    int result;
     if(s = 1)
     {
-        printf("\nc!\n");
+        result = start_client();
     }      
     else 
     {
-        printf("\nserver!\n");
+        result = printf("\nserver!\n");
     }
+    printf("Result: %d", result);
     return (EXIT_SUCCESS);
 }
 
