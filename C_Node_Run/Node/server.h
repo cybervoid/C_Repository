@@ -28,4 +28,4 @@ extern "C" {
 #endif /* SERVER_H */
 
 
-extern void start_server();
+extern int start_server();

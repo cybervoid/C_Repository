@@ -27,4 +27,4 @@ extern "C" {
 
 #endif /* CLIENT_H */
 
-extern void start_client();
+extern int start_client();
