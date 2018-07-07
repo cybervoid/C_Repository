@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     char *arg2 = argv[1];
     int s = strncmp("c", arg2, 1);
     int result;
-    if(s = 1)
+    if(s == 1)
     {
         char *arg3 = argv[2];
         printf("%s\n", arg3);
