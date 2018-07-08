@@ -56,14 +56,6 @@ int start_client(char* ip)
         {
             printf("Error : Fputs error\n");
         }
-        int size = sizeof(recvBuff)-1;
-        for(int j = 0; j < size; j++)
-        {
-            if(recvBuff[j] != NULL && recvBuff[j] != '\0' )
-            {
-                printf(recvBuff[j]);
-            }
-        }
     } 
 
     if(n < 0)
