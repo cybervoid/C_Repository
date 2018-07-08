@@ -26,7 +26,7 @@ int start_server()
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    serv_addr.sin_port = htons(5000); 
+    serv_addr.sin_port = htons(PORT); 
 
     bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)); 
 
@@ -41,6 +41,6 @@ int start_server()
         write(connfd, sendBuff, strlen(sendBuff)); 
 
         close(connfd);
-        sleep(1);
+        sleep(10);
      }
 }
