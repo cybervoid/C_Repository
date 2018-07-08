@@ -12,3 +12,4 @@ A repository for writing code in C
 ## Resources
 1. [Udemy C Programming Course](https://www.udemy.com/c-programming-for-beginners-/learn/v4/)
 2. [CodeBlocks](http://codeblocks.org/) - C and C++ developer environment
+3. [C Pointers (Advanced Programming)](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/t/lecture/6863158?start=0)

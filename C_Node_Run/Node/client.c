@@ -47,17 +47,15 @@ int start_client(char* ip)
        printf("Error : Connect Failed \n");
        return 1;
     } 
-
+    printf("read response...");
     while ( (n = read(sockfd, recvBuff, sizeof(recvBuff)-1)) > 0)
     {
-        
         recvBuff[n] = 0;
         if(fputs(recvBuff, stdout) == EOF)
         {
             printf("Error : Fputs error\n");
         }
     } 
-
     if(n < 0)
     {
         printf("\n Read error \n");
