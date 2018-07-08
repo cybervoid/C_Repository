@@ -54,9 +54,18 @@ void display_pointer_value()
     printf("%d %d %s\n", &str1, str1, str1);
     printf("%d %d %s\n", &str2, str2, str2);
 }
+
+void address_sandbox()
+{
+    char str1[] = "my char array";
+    char *xstr1 = &str1;
+    printf("%s : %d | %s : %d", str1, str1, xstr1, &xstr1);
+}
+
 int main(int argc, char** argv) 
 {
-    display_pointer_value();
+    address_sandbox();
+    //display_pointer_value();
     //strings();
     //pointerExample();
     return (EXIT_SUCCESS);
