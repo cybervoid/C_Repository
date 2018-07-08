@@ -46,9 +46,18 @@ void strings()
     printf("%s %c %d %d %d\n", str1, str1[0], &str1, &str1[0], str1);
     return;
 }
+
+void display_pointer_value() 
+{
+    char str1[] = "hello";
+    char *str2 = "Goodbye";
+    printf("%d %d %s\n", &str1, str1, str1);
+    printf("%d %d %s\n", &str2, str2, str2);
+}
 int main(int argc, char** argv) 
 {
-    strings();
+    display_pointer_value();
+    //strings();
     //pointerExample();
     return (EXIT_SUCCESS);
 }
