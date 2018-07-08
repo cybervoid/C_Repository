@@ -13,7 +13,7 @@
 #define PORT 8080
 int start_client(char* ip) 
 {
-    printf("starting client %s", ip);
+    printf("starting client %s\n", ip);
     int sockfd = 0, n = 0;
     char recvBuff[1024];
     struct sockaddr_in serv_addr; 
@@ -27,7 +27,7 @@ int start_client(char* ip)
     memset(recvBuff, '0',sizeof(recvBuff));
     if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
-        printf("\n Error : Could not create socket \n");
+        printf("Error : Could not create socket \n");
         return 1;
     } 
 
@@ -35,25 +35,34 @@ int start_client(char* ip)
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT); 
-    printf("setting inet_pton");
+    printf("setting inet_pton\n");
     if(inet_pton(AF_INET, ip, &serv_addr.sin_addr)<=0)
     {
-        printf("\n inet_pton error occured\n");
+        printf("error: inet_pton error occured\n");
         return 1;
     } 
-    printf("connecting to socket");
+    printf("connecting to socket\n");
     if( connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
     {
-       printf("\n Error : Connect Failed \n");
+       printf("Error : Connect Failed \n");
        return 1;
     } 
 
     while ( (n = read(sockfd, recvBuff, sizeof(recvBuff)-1)) > 0)
     {
+        
         recvBuff[n] = 0;
         if(fputs(recvBuff, stdout) == EOF)
         {
-            printf("\n Error : Fputs error\n");
+            printf("Error : Fputs error\n");
+        }
+        int size = sizeof(recvBuff)-1;
+        for(int j = 0; j < size; j++)
+        {
+            if(recvBuff[j] != NULL && recvBuff[j] != '\0' )
+            {
+                printf(recvBuff[j]);
+            }
         }
     } 
 
