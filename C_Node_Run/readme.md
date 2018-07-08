@@ -13,6 +13,7 @@ make -f ./Makefile
 ```
 
 ## References
-1. Sockets   
-    - [Sockets Example](https://www.geeksforgeeks.org/socket-programming-cc/) - basic sockets in C
+1. Sockets  (**Code samples and reference guides**)
+    - [Geeks for Geeks - Sockets Example](https://www.geeksforgeeks.org/socket-programming-cc/) - basic sockets in C
+    - [The Geek Stuff](https://www.thegeekstuff.com/2011/12/c-socket-programming/?utm_source=feedburner)
     - [Sockets Explained](http://www.cs.rpi.edu/~moorthy/Courses/os98/Pgms/socket.html)
