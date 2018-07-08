@@ -17,8 +17,38 @@
 /*
  * 
  */
-int main(int argc, char** argv) {
 
-    return (EXIT_SUCCESS);
+void pointerExample()
+{
+    int num;
+    int* numPtr;
+    int num2;
+    num = 100;
+    numPtr = &num; //gets address of num variable.
+    num2 = *numPtr;
+    printf("num=%d, numPtr=%d, address of num=%d, num2=%d\n", num, numPtr, &num, num2);
 }
 
+void indirection()
+{
+    int num;
+    int* numPtr;
+    int num2;
+    num = 100;
+    numPtr = &num; //gets address of num variable.
+    num2 = *numPtr;
+    printf("num=%d, numPtr=%d, address of num=%d, num2=%d\n", num, numPtr, &num, num2);    
+}
+
+void strings() 
+{
+    char str1[] = "Hello world!";
+    printf("%s %c %d %d %d\n", str1, str1[0], &str1, &str1[0], str1);
+    return;
+}
+int main(int argc, char** argv) 
+{
+    strings();
+    //pointerExample();
+    return (EXIT_SUCCESS);
+}
