@@ -92,8 +92,10 @@ void multiple_indirection()
         printf("- Loop{%d} array address is %p\n", i, data);
         printf("\titem pointed to by pi is %d\n", *pi); //de-reference to display the integer value
         printf("\titem pointed to by ppi is %p\n", *ppi); //gets the value at pi, which ppi points too
-        printf("\titem pointed to by double indirection of ppi is %d\n", **ppi); //gets the value of the Pointer that the referenced pointer points to [<-- not a typo. that's written correctly]
+        //the following gets the actual number value stored in pi using two levels of pointers 
+        printf("\titem pointed to by double indirection of ppi is %d\n", **ppi); //gets the value of the Pointer that the referenced pointer points to. [<-- not a typo. that's written correctly]
         printf("\tThe address of pi is %p \n\tThe value of pi (what it points to) is %p\n\n", &pi, ppi); //shows the value stored by the ppi variable is the address of the pi variable 
+        printf("[x] The value of pi is %p (pi) and it points to %d (*pi)\n", pi, *pi);
         printf("--------------------------------------------\n");
         //advance the pointer to point to the next element of the data array
         pi += 1; // simple example of pointer arithmetic
