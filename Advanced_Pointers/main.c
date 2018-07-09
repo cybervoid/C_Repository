@@ -93,7 +93,8 @@ void multiple_indirection()
         printf("\titem pointed to by double indirection of ppi is %d\n", **ppi);
         printf("\tThe address of pi is %p \n\tThe value of pi (what it points to) is %p\n\n", &pi, ppi);
         printf("--------------------------------------------\n");
-        pi += 1; //advance the pointer to point to the next element of the data array
+        //advance the pointer to point to the next element of the data array
+        pi += 1; // simple example of pointer arithmetic
     }
 }
 
