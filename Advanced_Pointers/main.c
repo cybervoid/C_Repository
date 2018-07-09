@@ -19,6 +19,14 @@
  */
 #define LENGTH 3
 int data [LENGTH]; //some integers
+void pointers_memaddr_example()
+{
+    int mem = 1;
+    int *pointer;
+    pointer = &mem; //a pointer takes a memory address
+    printf("pointer value: %p", pointer);
+}
+
 void pointerExample()
 {
     int num;
@@ -58,6 +66,8 @@ void display_pointer_value()
 
 void multiple_indirection()
 {
+    //#define LENGTH 3
+    //int data [LENGTH]; //some integers
     int *pi;    // a simple pointer to an integer
     int **ppi;  // a pointer to a point to an integer
     
@@ -87,13 +97,6 @@ void multiple_indirection()
     }
 }
 
-void pointers_memaddr_example()
-{
-    int mem = 1;
-    int *pointer;
-    pointer = &mem; //a pointer takes a memory address
-    printf("pointer value: %p", pointer);
-}
 void address_sandbox()
 {
     char str1[] = "my char array";

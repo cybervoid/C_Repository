@@ -10,7 +10,7 @@ A repository for writing code in C
     - and maybe semaphores
 
 ## Quick Reference
-1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/b4fad643bed657a25dcb54cace9618ff35145cbd/Advanced_Pointers/main.c#void_pointers_memaddr_example)
+1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/b4fad643bed657a25dcb54cace9618ff35145cbd/Advanced_Pointers/main.c#L90)
 ```
 int mem = 1;
 int *pointer;
