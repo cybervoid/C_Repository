@@ -81,25 +81,30 @@ void multiple_indirection()
         printf("- Loop{%d} array address is %p\n", i, data);
         printf("\titem pointed to by pi is %d\n", *pi);
         printf("\titem pointed to by double indirection of ppi is %d\n", **ppi);
-        printf("The address of pi is %p and the value of pi (what it points to) is %p\nn", &pi, ppi);
+        printf("\tThe address of pi is %p \n\tThe value of pi (what it points to) is %p\n\n", &pi, ppi);
+        printf("--------------------------------------------\n");
+        pi += 1; //advance the pointer to point to the next element of the data array
     }
 }
 
-void address_sandbox()
+void pointers_memaddr_example()
 {
     int mem = 1;
     int *pointer;
     pointer = &mem; //a pointer takes a memory address
     printf("pointer value: %p", pointer);
-    //char str1[] = "my char array";
-    //char *xstr1 = &str1;
-    //printf("%s : %d | %s : %d", str1, str1, xstr1, &xstr1);
+}
+void address_sandbox()
+{
+    char str1[] = "my char array";
+    char *xstr1 = &str1;
+    printf("%s : %d | %s : %d", str1, str1, xstr1, &xstr1);
 }
 
 int main(int argc, char** argv) 
 {
-    //multiple_indirection();
-    address_sandbox();
+    multiple_indirection();
+    //address_sandbox();
     //display_pointer_value();
     //strings();
     //pointerExample();
