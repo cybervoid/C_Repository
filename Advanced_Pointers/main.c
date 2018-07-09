@@ -88,13 +88,16 @@ void multiple_indirection()
     ppi = &pi;
     
     for(int i = 0; i < LENGTH; i++) {
+        
         printf("- Loop{%d} array address is %p\n", i, data);
-        printf("\titem pointed to by pi is %d\n", *pi);
-        printf("\titem pointed to by double indirection of ppi is %d\n", **ppi);
+        printf("\titem pointed to by pi is %d\n", *pi); //de-reference to display the integer value
+        printf("\titem pointed to by ppi is %p\n", *ppi); 
+        printf("\titem pointed to by double indirection of ppi is %d\n", **ppi); //gets the value of the Pointer that the referenced pointer points to <-- not a typo. that's written correctly
         printf("\tThe address of pi is %p \n\tThe value of pi (what it points to) is %p\n\n", &pi, ppi);
         printf("--------------------------------------------\n");
         //advance the pointer to point to the next element of the data array
         pi += 1; // simple example of pointer arithmetic
+        // (!!) - This advances through the loop with pointer arithmetic
     }
 }
 
