@@ -9,6 +9,20 @@ A repository for writing code in C
     - threads (pthreads)
     - and maybe semaphores
 
+## Quick Reference
+1. Pointers and memory addresses
+```
+int mem = 1;
+int *pointer;
+pointer = &mem; //a pointer takes a memory address
+printf("pointer value: %p", pointer);
+//output: "pointer value: 0x7ffee2e81a0c"
+int *pointerII;
+pointerII = mem;
+printf("pointer value: %d", pointer);
+//output: "pointer value: 1"
+```
+
 ## Resources
 1. [Udemy C Programming Course](https://www.udemy.com/c-programming-for-beginners-/learn/v4/)
 2. [CodeBlocks](http://codeblocks.org/) - C and C++ developer environment
