@@ -131,6 +131,8 @@ void multiple_indirection_chars()
             printf("%c ", *pc);
             pc += 1;
         }
+        if(*pc == 0)
+            printf("e: %d", *pc); // *pc == false?
         printf("\n");
     }   
 }
