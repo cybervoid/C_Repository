@@ -10,6 +10,7 @@ A repository for writing code in C
     - and maybe semaphores
 3. [Advanced_Pointers](./Advanced_Pointers) - Based upon the Udemy course [Advanced C Programming - Pointers](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/)
 4. [Quote_Debugging_C](./Quote_Debugging_C) - a "how to" for using the debugger in netbeans.
+5.[PThreads](./PThreads) - a simple project with a pthread example.
 
 ## Quick Reference
 1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/master/Advanced_Pointers/main.c#L22)

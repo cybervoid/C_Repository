@@ -76,7 +76,7 @@ Contributor(s):
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -86,6 +86,7 @@ Contributor(s):
         </ccTool>
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
             <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
@@ -138,6 +139,7 @@ Contributor(s):
         </asmTool>
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
             <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
