@@ -30,3 +30,4 @@ printf("pointer value: %d", pointer);
 2. [CodeBlocks](http://codeblocks.org/) - C and C++ developer environment
 3. [C Pointers (Advanced Programming)](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/t/lecture/6863158?start=0)
 4. [Tutorial: Netbeans debugger](https://netbeans.org/kb/docs/cnd/debugging.html#requirements) - A walkthrough for the debugger for netbeans.
+    - [Install gdb](https://stackoverflow.com/questions/35497491/netbeans-resolve-missing-debugger-command-c) - installing gdb debugger on OSX. 
