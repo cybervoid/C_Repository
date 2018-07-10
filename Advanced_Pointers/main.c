@@ -19,6 +19,8 @@
  */
 #define LENGTH 3
 int data [LENGTH]; //some integers
+char* words[LENGTH];
+    
 void pointers_memaddr_example()
 {
     int mem = 1;
@@ -47,6 +49,10 @@ void indirection()
     numPtr = &num; //gets address of num variable.
     num2 = *numPtr;
     printf("num=%d, numPtr=%d, address of num=%d, num2=%d\n", num, numPtr, &num, num2);    
+}
+
+void main_test(int argc, char **argv) {
+    
 }
 
 void strings() 
@@ -106,7 +112,7 @@ void multiple_indirection_chars()
 {
     char *pc;   // a pointer to a character
     char **ppc; // a pointer to a pointer to a character
-    char* words[LENGTH];
+
     printf("multiple indrection example\n");
     
     // initialize our string array
@@ -143,9 +149,49 @@ void address_sandbox()
     printf("%s : %d | %s : %d", str1, str1, xstr1, &xstr1);
 }
 
+void generic_pointers()
+{
+    void *gp;
+    
+    printf("generic pointer example\n");
+    
+    // initialize our integer array
+    for(int i = 0; i < LENGTH; i++)
+    {
+        data[i] = i;
+    }
+    for (int i = 0; i < LENGTH; i++) {
+        printf("%d\n", data[i]);
+    }
+    
+    // initialize our string array
+    words[0] = "zero";
+    words[1] = "one";
+    words[2] = "two";
+    
+    for (int i = 0; i < LENGTH; i++){
+        printf("%s\n", words[i]);
+    }
+    
+    /*
+     * c: example of a generic pointer 
+     */
+    gp = data;
+    printf("\ndata array address is %p\n", gp);
+    // print out th first item in the array
+    printf("item points to by gp is %d\n", *(int*)gp);
+    //the cast tells the compiler what the address type is
+    gp = (int*)gp + 1;
+    printf("item pointed to by gp is now %d\n", *(int*)gp); //deference operator (another asterisk)
+    
+    
+    
+}
+
 int main(int argc, char** argv) 
 {
-    multiple_indirection_chars();
+    main_test(argc, argv);
+    //multiple_indirection_chars();
     //multiple_indirection();
     //address_sandbox();
     //display_pointer_value();
