@@ -18,9 +18,15 @@
  * 
  */
 #define LENGTH 3
+#define MAXSTRLEN 100
 int data [LENGTH]; //some integers
 char* words[LENGTH];
-    
+
+
+
+
+
+
 void pointers_memaddr_example()
 {
     int mem = 1;
@@ -152,9 +158,7 @@ void address_sandbox()
 void generic_pointers()
 {
     void *gp;
-    
     printf("generic pointer example\n");
-    
     // initialize our integer array
     for(int i = 0; i < LENGTH; i++)
     {
@@ -163,16 +167,13 @@ void generic_pointers()
     for (int i = 0; i < LENGTH; i++) {
         printf("%d\n", data[i]);
     }
-    
     // initialize our string array
     words[0] = "zero";
     words[1] = "one";
     words[2] = "two";
-    
     for (int i = 0; i < LENGTH; i++){
         printf("%s\n", words[i]);
     }
-    
     /*
      * c: example of a generic pointer 
      */
@@ -183,7 +184,6 @@ void generic_pointers()
     //the cast tells the compiler what the address type is
     gp = (int*)gp + 1;
     printf("item pointed to by gp is now %d\n", *(int*)gp); //deference operator (another asterisk)
-    
     printf("------------ part 2: char ------------");
     gp = words; //set generic pointer to the words array start position
     printf("\nwords array address is %p\n", gp);
@@ -193,12 +193,55 @@ void generic_pointers()
     // the cast tells the compiler what the address type is and so we can add 
     gp = (char**)gp + 1;
     printf("item pointed to by gp is now %s\n", *(char**)gp);
+}
+
+
+//void runtime_memory_allocation()
+//{
+//    printf(string_function("John"));
+//    printf(string_function("Gussie Fink-Nottle"));
+//    
+//}
+//char * string_function(char *astring)
+//{
+//    char* s; // a pointer
+//    s = (char*)malloc(MAXSTRLEN);
+//    s[0] = 0; // need this to initialize the buffer create by 
+//    strcat(s, "Hello ");
+//    strcat("s", astring);
+//    strcat(s, "\n");
+//    return s;
+//}
+
+//very simple allocation of memory changing something in the newly allocated
+void malloc_and_sizeof()
+{
+    char* s;
+    int stringsize;
+    
+    stringsize = sizeof("hello");   //first work out how big the string is
+    printf("size of 'hello' is %d\n", stringsize);// note, it is 6
+    //now allocate some memory
+    s = (char*)malloc(stringsize);
+    if(s == NULL) {
+        printf("malloc failed!\n");
+        exit(0);
+    }
+    
+    // now copy the string into the newly allocated memory
+    strncpy(s, "hello", stringsize);
+    // and change the first character (just to show we can)
+    printf("s is %s\n", s);
+    s[0] = 'c';
+    printf("s is now %s\n", s);
     
 }
 
 int main(int argc, char** argv) 
 {
-    generic_pointers();
+    malloc_and_sizeof();
+    //runtime_memory_allocation();
+    //generic_pointers();
     //main_test(argc, argv);
     //multiple_indirection_chars();
     //multiple_indirection();

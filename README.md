@@ -7,6 +7,9 @@ Taking advice from a friend, the main purpose of this repository is to improve m
 ## Overview
 This repository intends to create a working set of nodes between two (or more) devices (Raspberry Pi's). Its specifically intends to cover the various topics necessary for a strong understanding in computer science.
 
+#### Note
+Some of these fundamentals will also be covered using the [Go programming](https://github.com/cybervoid/GoRepository) language.
+
 ## Repository Contents
 1. [C_Beginners](./C_Beginners) - a repository for C programming beginners, based upon Udemy C Programming. See [Resources Section](#resources) class for C beginners.
 2. [C_Node_Run](./C_Node_Run) - a basic node program with the intended goal of including computer science fundamentals:
@@ -15,12 +18,12 @@ This repository intends to create a working set of nodes between two (or more) d
     - and maybe semaphores
 3. [Advanced_Pointers](./Advanced_Pointers) - Based upon the Udemy course [Advanced C Programming - Pointers](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/)
 4. [Quote_Debugging_C](./Quote_Debugging_C) - a "how to" for using the debugger in netbeans.
-    - Note, this isn't working correctly with netbeans on osx. 
+    - Note, this isn't working correctly with netbeans on osx.
     - todo: try with xcode
 5.[PThreads](./PThreads) - a simple project with a pthread example.
 
 ## Quick Reference
-1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/master/Advanced_Pointers/main.c#L22)
+1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/master/Advanced_Pointers/main.c#L30)
 ```
 int mem = 1;
 int *pointer;
