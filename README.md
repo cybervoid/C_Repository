@@ -5,7 +5,7 @@ A repository for writing code in C
 Taking advice from a friend, the main purpose of this repository is to improve my personal understanding of the **fundamental** concepts relating to software engineering.
 
 ## Overview
-This repository intends to create a working set of nodes between two (or more) devices (Raspberry Pi's). Its specifically intends to cover the various topics necessary for a strong understanding in computer science. 
+This repository intends to create a working set of nodes between two (or more) devices (Raspberry Pi's). Its specifically intends to cover the various topics necessary for a strong understanding in computer science.
 
 ## Repository Contents
 1. [C_Beginners](./C_Beginners) - a repository for C programming beginners, based upon Udemy C Programming. See [Resources Section](#resources) class for C beginners.
@@ -15,6 +15,8 @@ This repository intends to create a working set of nodes between two (or more) d
     - and maybe semaphores
 3. [Advanced_Pointers](./Advanced_Pointers) - Based upon the Udemy course [Advanced C Programming - Pointers](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/)
 4. [Quote_Debugging_C](./Quote_Debugging_C) - a "how to" for using the debugger in netbeans.
+    - Note, this isn't working correctly with netbeans on osx. 
+    - todo: try with xcode
 5.[PThreads](./PThreads) - a simple project with a pthread example.
 
 ## Quick Reference
