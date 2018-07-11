@@ -184,13 +184,22 @@ void generic_pointers()
     gp = (int*)gp + 1;
     printf("item pointed to by gp is now %d\n", *(int*)gp); //deference operator (another asterisk)
     
-    
+    printf("------------ part 2: char ------------");
+    gp = words; //set generic pointer to the words array start position
+    printf("\nwords array address is %p\n", gp);
+    //now print out the first item in the array
+    //- a cast is now needed to let the compiler know this is a pointer to a pointer of a char
+    printf("item pointed to by gp is %s\n", *(char**)gp);
+    // the cast tells the compiler what the address type is and so we can add 
+    gp = (char**)gp + 1;
+    printf("item pointed to by gp is now %s\n", *(char**)gp);
     
 }
 
 int main(int argc, char** argv) 
 {
-    main_test(argc, argv);
+    generic_pointers();
+    //main_test(argc, argv);
     //multiple_indirection_chars();
     //multiple_indirection();
     //address_sandbox();
