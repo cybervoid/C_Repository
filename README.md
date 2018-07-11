@@ -1,6 +1,11 @@
 # C_Repository
 A repository for writing code in C
 
+## Abstraction
+Taking advice from a friend, the main purpose of this repository is to improve my personal understanding of the **fundamental** concepts relating to software engineering.
+
+## Overview
+This repository intends to create a working set of nodes between two (or more) devices (Raspberry Pi's). Its specifically intends to cover the various topics necessary for a strong understanding in computer science. 
 
 ## Repository Contents
 1. [C_Beginners](./C_Beginners) - a repository for C programming beginners, based upon Udemy C Programming. See [Resources Section](#resources) class for C beginners.
