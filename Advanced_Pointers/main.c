@@ -13,7 +13,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <malloc.h>
 /*
  * 
  */
@@ -195,24 +195,22 @@ void generic_pointers()
     printf("item pointed to by gp is now %s\n", *(char**)gp);
 }
 
+char * string_function(char *astring)
+{
+    char* s;
+    s = (char*)malloc(MAXSTRLEN);   
+    s[0] = 0;		                // need this to initialize the buffer created by malloc
+    strcat(s, "Hello ");
+    strcat(s, astring);
+    strcat(s, "\n");
+    return s;
+}
 
-//void runtime_memory_allocation()
-//{
-//    printf(string_function("John"));
-//    printf(string_function("Gussie Fink-Nottle"));
-//    
-//}
-//char * string_function(char *astring)
-//{
-//    char* s; // a pointer
-//    s = (char*)malloc(MAXSTRLEN);
-//    s[0] = 0; // need this to initialize the buffer create by 
-//    strcat(s, "Hello ");
-//    strcat("s", astring);
-//    strcat(s, "\n");
-//    return s;
-//}
-
+void runtime_memory_allocation()
+{
+    printf(string_function("John"));
+    printf(string_function("Gussie Fink-Nottle"));
+}
 //very simple allocation of memory changing something in the newly allocated
 void malloc_and_sizeof()
 {
@@ -239,8 +237,8 @@ void malloc_and_sizeof()
 
 int main(int argc, char** argv) 
 {
-    malloc_and_sizeof();
-    //runtime_memory_allocation();
+    //malloc_and_sizeof();
+    runtime_memory_allocation();
     //generic_pointers();
     //main_test(argc, argv);
     //multiple_indirection_chars();
