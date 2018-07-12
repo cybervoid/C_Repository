@@ -1,4 +1,5 @@
 
+//disable compiler warnings: #define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -213,21 +214,70 @@ void malloc_and_sizeof()
 		printf("malloc failed!\n");
 		exit(0);
 	}
-
 	// now copy the string into the newly allocated memory
 	strncpy(s, "hello", stringsize);
 	// and change the first character (just to show we can)
 	printf("s is %s\n", s);
 	s[0] = 'c';
 	printf("s is now %s\n", s);
+}
+// look at calloc and memory leaks
+void calloc_example()
+{	
+	char* s;
+	int i;
+	int* p;
+	//use malloc first to allocate some memory and see what is in it (usually junk)
+	s = (char*)malloc(6); //malloc will return NULL(0) if it fails, so we should check here, but we won't for brevity
+	for (i = 0; i < 6; i++) 
+	{
+		printf("s[%d]=%d\n", i, s[i]);
+	}
+
+	free(s);	//use 'free' to return the memory so that we don't get the memory leak
+	// now we'll use calloc to do the same - note that the memory is zero'd out
+	//Note: the syntax of calloc is different for malloc - the second argument gives the size of the memory unit to allocate
+	s = (char*)calloc(6, sizeof(char));		// calloc will return 0 if it fails, so we should check here, but we won't for brevity
+	for (i = 0; i < 6; i++)
+	{		
+		printf("s[%d]=%d\n", i, s[i]);
+	}
+	free(s);
+
+	// in this last example, calloc allocates 6 integers, or 24 bytes, since an integer is 4 bytes long
+	p = (int*)calloc(6, sizeof(int));
+	for (i = 0; i < 6; i++)
+	{
+		printf("p[%d] =%d\n", i, p[i]);
+	}
 
 }
+#define TOTAL 50000
+void calloc__big_ex()
+{	
+	//An example to test the limits of how much memory can be utilized for a single array of pointers in a program. 
+	int i = 0;
+	char* charArray[TOTAL];
+	int count = 0;
+	
+	while (i < TOTAL)
+	{
+		char* s;
+		s = (char*)calloc(2000, sizeof(char));		// calloc will return 0 if it fails, so we should check here, but we won't for brevity
 
+		free(s);
+		charArray[i] = s;
+		i++;
+	}
+	count += TOTAL;
+}
 
 int main(int argc, char** argv)
 {
+	calloc__big_ex();
+	//calloc_example();
 	//malloc_and_sizeof();
-	runtime_memory_allocation();
+	//runtime_memory_allocation();
 	//generic_pointers();
 	//main_test(argc, argv);
 	//multiple_indirection_chars();
