@@ -60,6 +60,5 @@ int start_client(char* ip)
     {
         printf("\n Read error \n");
     } 
-
     return 0;
 }

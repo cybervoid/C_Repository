@@ -98,11 +98,15 @@ void start_server(char *ip)
      *      connection is established between client and server, and 
      *      they are ready to transfer data.
      */
-    if ((new_socket = accept(socket_fd, (struct sockaddr *)&address, 
-                       (socklen_t*)&addrlen))<0)
+    
+    while(1)
     {
-        perror("accept");
-        exit(EXIT_FAILURE);
+        if ((new_socket = accept(socket_fd, (struct sockaddr *)&address, 
+                           (socklen_t*)&addrlen))<0)
+        {
+            perror("accept");
+            exit(EXIT_FAILURE);
+        }
     }
     
     valread = read( new_socket, buffer, 1024);
