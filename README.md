@@ -20,7 +20,9 @@ Some of these fundamentals will also be covered using the [Go programming](https
 4. [Quote_Debugging_C](./Quote_Debugging_C) - a "how to" for using the debugger in netbeans.
     - Note, this isn't working correctly with netbeans on osx.
     - todo: try with xcode
-5.[PThreads](./PThreads) - a simple project with a pthread example.
+5. [VS_Advanced_Pointers](./VS_Advanced_Pointers) - Same as  [Advanced_Pointers](./Advanced_Pointers) directory, except this one utilizes Visual Studio for running the project on a windows machine. 
+6.[PThreads](./PThreads) - a simple project with a pthread example.
+7.[RaspberryPI_Setup](./RaspberryPI_Setup) -  Setup instructions for a raspberry pi
 
 ## Quick Reference
 1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/master/Advanced_Pointers/main.c#L30)
