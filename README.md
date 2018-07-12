@@ -43,3 +43,4 @@ printf("pointer value: %d", pointer);
 4. [Tutorial: Netbeans debugger](https://netbeans.org/kb/docs/cnd/debugging.html#requirements) - A walkthrough for the debugger for netbeans.
     - [Install gdb](https://stackoverflow.com/questions/35497491/netbeans-resolve-missing-debugger-command-c) - installing gdb debugger on OSX.
     - ["Codedesign" Taskgated Permissions on mac (darwin)](https://github.com/cs01/gdbgui/issues/55)
+5. Creating a C Project in Visual Studio| [Clip](https://www.youtube.com/watch?v=YOLN-t09-tM)
