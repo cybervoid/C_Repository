@@ -10,9 +10,9 @@
 #define _CRT_SECURE_NO_WARNINGS 
 #define LENGTH 3
 #define MAXSTRLEN 100
+#define COUNT 4
 int data[LENGTH]; //some integers
 char* words[LENGTH];
-
 
 
 
@@ -287,7 +287,8 @@ void reallocate()
 
 	// now suppose we want to add 'world' to 'hello' - we can't just do this ...
 	// strcat(s, " world");					- disaster!!! 
-	s = (char*)realloc(s, 12);					// but we can use 'realloc' which frees the original 6 bytes of memory and allocates an new 12 bytes
+	realloc(s, 12);
+	//s = (char*)realloc(s, 12);					// but we can use 'realloc' which frees the original 6 bytes of memory and allocates an new 12 bytes
 	strncpy(s, "hello", i);						// now copy the string into the newly re-allocated memory
 	strcat(s, " world");						// now we can tag on the 'world'
 	printf("s is now %s\n", s);
@@ -300,9 +301,38 @@ void reallocate()
 
 }
 
+
+// Advanced C: Pointers - Pointer Arithmetic: https://www.udemy.com/advanced-c-programming-pointers/learn/v4/t/lecture/6863574?start=0
+void pointer_arithmetic()
+{
+	
+	int *p;
+	int a[COUNT];
+	printf("size of an 'int' is %d\n", sizeof(int));
+
+	for (int i = 0; i < COUNT; i++)
+		a[i] = i;
+
+	//do some pointer arithmetic
+	p = a; //set the pointer to the array to the start of the array
+	printf("address of 'a[0]' is %p; value of p is %p [%d]; value pointed to by p is %d\n", a, p, p, *p);
+
+	p = p + 1;
+	printf("address of a[1] is %p; value of p is %p [%d]; value pointed to by p is %d\n", a, p, p, *p);
+
+	//increment p by another 2 the value pointed by p is now a[3]
+	p = p + 2;
+	printf("address of a[3] is %p; value of p is %p [%d]; value pointed to by p is %d\n", a, p, p, *p);
+
+	//what happens if we go beyond the array end? there's nothing to stop or warn you from doing this operation...
+	p = p + 1;
+	printf("address of a is %p; value of p is %p [%d]; value pointed to by p is %d\n", a, p, p, *p);
+	
+}
 int main(int argc, char** argv)
 {
-	reallocate();
+	pointer_arithmetic();
+	//reallocate();
 	//calloc__big_ex();
 	//calloc_example();
 	//malloc_and_sizeof();
