@@ -287,7 +287,8 @@ void reallocate()
 
 	// now suppose we want to add 'world' to 'hello' - we can't just do this ...
 	// strcat(s, " world");					- disaster!!! 
-	s = (char*)realloc(s, 12);					// but we can use 'realloc' which frees the original 6 bytes of memory and allocates an new 12 bytes
+	realloc(s, 12);
+	//s = (char*)realloc(s, 12);					// but we can use 'realloc' which frees the original 6 bytes of memory and allocates an new 12 bytes
 	strncpy(s, "hello", i);						// now copy the string into the newly re-allocated memory
 	strcat(s, " world");						// now we can tag on the 'world'
 	printf("s is now %s\n", s);
