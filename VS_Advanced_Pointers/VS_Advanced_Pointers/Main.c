@@ -329,6 +329,7 @@ void pointer_arithmetic()
 	printf("address of a is %p; value of p is %p [%d]; value pointed to by p is %d\n", a, p, p, *p);
 	
 }
+
 int main(int argc, char** argv)
 {
 	pointer_arithmetic();
