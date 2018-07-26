@@ -1,14 +1,11 @@
 # C_Repository
 A repository for writing code in C
 
-## Abstraction
-Taking advice from a friend, the main purpose of this repository is to improve my personal understanding of the **fundamental** concepts relating to software engineering.
-
 ## Overview
 This repository intends to create a working set of nodes between two (or more) devices (Raspberry Pi's). Its specifically intends to cover the various topics necessary for a strong understanding in computer science.
 
 #### Note
-Some of these fundamentals will also be covered using the [Go programming](https://github.com/cybervoid/GoRepository) language.
+Some fundamentals will also be covered using the [Go programming](https://github.com/cybervoid/GoRepository) language.
 
 ## Repository Contents
 1. [C_Beginners](./C_Beginners) - a repository for C programming beginners, based upon Udemy C Programming. See [Resources Section](#resources) class for C beginners.
@@ -16,13 +13,9 @@ Some of these fundamentals will also be covered using the [Go programming](https
     - tcp/ip socket(s)
     - threads (pthreads)
     - and maybe semaphores
-3. [Advanced_Pointers](./Advanced_Pointers) - Based upon the Udemy course [Advanced C Programming - Pointers](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/)
-4. [Quote_Debugging_C](./Quote_Debugging_C) - a "how to" for using the debugger in netbeans.
-    - Note, this isn't working correctly with netbeans on osx.
-    - todo: try with xcode
-5. [VS_Advanced_Pointers](./VS_Advanced_Pointers) - Same as  [Advanced_Pointers](./Advanced_Pointers) directory, except this one utilizes Visual Studio for running the project on a windows machine. 
-6.[PThreads](./PThreads) - a simple project with a pthread example.
-7.[RaspberryPI_Setup](./RaspberryPI_Setup) -  Setup instructions for a raspberry pi
+3. [Advanced_Pointers](./Advanced_Pointers) - Based upon the Udemy course [Advanced C Programming - Pointers](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/). Includes Netbeans and Visual Studio workspace.
+4. [PThreads](./PThreads) - a simple project with a pthread example.
+5. [RaspberryPI_Setup](./RaspberryPI_Setup) -  Setup instructions for raspberry pi setup
 
 ## Quick Reference
 1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/master/Advanced_Pointers/main.c#L30)
