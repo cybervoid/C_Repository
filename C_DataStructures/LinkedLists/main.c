@@ -120,6 +120,8 @@ int main(int argc, char** argv)
 			case 10:
 				start = reverseList(start, data);
 				break;
+			default:
+				printf("Invalid Choice Selected\n")
 		}
 	}
 }
