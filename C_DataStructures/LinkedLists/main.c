@@ -51,7 +51,7 @@ struct node* createList(struct node *start)
 	return start;
 }
 
-struct node* secondToLastNode(struct node *start)
+struct node* secondToLastNode(struct node start)
 {
 	struct node* p = start;
 	while (p->link->link != NULL)
@@ -59,7 +59,7 @@ struct node* secondToLastNode(struct node *start)
 
 	return p;
 }
-void insertAtEnd(struct node *start, int data)
+void insertAtEnd(struct node start, int data)
 {
 	struct node* p = start;
 	while(p->link != NULL)
@@ -81,7 +81,7 @@ struct node* create_node(int data)
 	return temp;
 }
 
-struct node *insertInBeginning(struct node *start, int data)
+struct node *insertInBeginning(struct node start, int data)
 { 
 	struct node *temp;
 	temp = (struct node *)malloc(sizeof(struct node));
@@ -204,20 +204,20 @@ int main(int argc, char** argv)
 				printf("Enter the element before which to insert:");
 				scanf("%d", &x);
 				start = insertBefore(start, data, x);
-			case 8:
-				printf("Enter the element to be inserted:");
-				scanf("%d", &data);
-				printf("Enter the position at which to be inserted:");
-				scanf("%d", &k);
-				start = insertAtPosition(start, data, k);
-			case 9:
-				printf("Enter the element to be deleted:");
-				scanf("%d", &data);
-				start = deleteNode(start, data);
-				break;
-			case 10:
-				start = reverseList(start, data);
-				break;
+			//case 8:
+			//	printf("Enter the element to be inserted:");
+		//		scanf("%d", &data);
+		//		printf("Enter the position at which to be inserted:");
+		//		scanf("%d", &k);
+		//		start = insertAtPosition(start, data, k);
+		//	case 9:
+		//		printf("Enter the element to be deleted:");
+		//		scanf("%d", &data);
+		//		start = deleteNode(start, data);
+		//		break;
+		//	case 10:
+		//		start = reverseList(start, data);
+		//		break;
 			default:
 				printf("Invalid Choice Selected\n");
 		}
