@@ -1,6 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <stdlib.h>
-#define _CRT_SECURE_NO_WARNINGS 
+
 struct node
 {
 	int info;	
@@ -10,25 +11,120 @@ struct node
 
 void displayList(struct node *start)
 {
+	struct node *p;
+	if (start == NULL)
+	{
+		printf("list is empty \n");
+		return;
+	}
 
+	printf("list is : ");
+	p = start; 	
+	while (p != NULL)
+	{
+		printf("%d", p->info);
+		p = p->link;
+	}
+	printf("\n");
 }
 
+struct node* createList(struct node *start)
+{	
+	int i, n, data;
+
+	printf("Enter the number of nodes : ");
+	scanf("%d", &n);
+
+	if (n == 0)
+		return start;
+
+	printf("Enter the first element to be inserted : ");
+	scanf("%d", &data);
+	start = insertInBeginning(start, data);
+
+	for (i = 2; i <= n; i++)
+	{
+		printf("Enter the next element to be inserted : ");
+		scanf("%d", &data);
+		insertAtEnd(start, data);
+	}
+	return start;
+}
+
+struct node* secondToLastNode(struct node *start)
+{
+	struct node* p = start;
+	while (p->link->link != NULL)
+		p = p->link;
+
+	return p;
+}
+void insertAtEnd(struct node *start, int data)
+{
+	struct node* p = start;
+	while(p->link != NULL)
+	{
+		p = p->link;
+	}
+
+	struct node* temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	p->link = temp;
+	p->info = data;
+	temp->link = NULL;
+}
+struct node* create_node(int data)
+{
+	struct node *temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->info = data;
+	return temp;
+}
+
+struct node *insertInBeginning(struct node *start, int data)
+{ 
+	struct node *temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->info = data;
+
+	temp->link = start;
+	start = temp;
+
+	return start;
+}
+//struct node* createNode(struct node *start, int *data)
+//{
+//}
 void countNodes(struct node *start)
 {
+	int n = 0;
+	struct node *p = start;
+	while (p != NULL)
+	{
+		n++;
+		p = p->link;
+	}
+	printf("Number of nodes = %d\n", n);
 
 }
-void search(struct node *start, int *data) 
+void search(struct node *start, int x)
 {
-
+	int position = 1;
+	struct node* p = start;
+	while (p != NULL)
+	{
+		if (p->info == x)
+			break;
+		position++;
+		p = p->link;
+	}
+	if (p == NULL)
+		printf("%d not found in list\n", x);
+	else
+		printf("%d is at position %d\n", x, position);
+	
 }
-struct node* insertInBeginning(struct node *start, int *data)
-{
 
-}
-void insertAtEnd(struct node *start, int *data)
-{
-
-}
 void insertAfter(struct node *start, int *data, int *x)
 {
 
@@ -36,7 +132,8 @@ void insertAfter(struct node *start, int *data, int *x)
 
 struct node* insertBefore(struct node *start, int *data, int *x)
 {
-
+	struct node* next;
+	return next;
 }
 
 struct node* deleteNode(struct node *start, int *data)
@@ -51,10 +148,11 @@ struct node* reverseList(struct node *start)
 int main(int argc, char** argv)
 {
 	struct node *start = NULL; //declare a new linked list
-	start = createList(start);
+	int choice, data, x, k;
+	start = createList(start);	
 	while (1)
 	{
-		int choice, data, x, k;
+		
 		printf("\n");
 		printf("[1] Display list\n");
 		printf("[2] Count the number of nodes\n");
@@ -121,7 +219,7 @@ int main(int argc, char** argv)
 				start = reverseList(start, data);
 				break;
 			default:
-				printf("Invalid Choice Selected\n")
+				printf("Invalid Choice Selected\n");
 		}
 	}
 }
