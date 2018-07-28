@@ -6,6 +6,8 @@
 2. [DoublyLinkedList](./DoublyLinkedList) - data structure doubly linked list
 3. [Stacks](./Stacks) - added data structure section for stacks, stacks are last in first out. (LIFO)
     - Stacks - insertion and deletion allowed on one end
+    - insert is push
+    - delete is pop
 4. [Queues](./Queues) - added a data structure section for queues, queues are first in first out. (FIFO)
     - insertion is performed on one end
     - deletion is perform on the other end
