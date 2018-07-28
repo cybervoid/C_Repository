@@ -7,6 +7,8 @@ struct node *insertInBeginning(struct node *, int);
 void insertAtEnd(struct node *, int);
 struct node *get_position(struct node *, int);
 struct node *insert_node(struct node *);
+void insertAfter(struct node *, int, int );
+struct node* insertBefore(struct node *, int, int);
 
 struct node
 {
@@ -104,19 +106,6 @@ void search(struct node *start, int x)
 	
 }
 
-
-
-void insertAfter(struct node *start, int *data, int *x)
-{
-
-}
-
-struct node* insertBefore(struct node *start, int *data, int *x)
-{
-	struct node* next;	
-	next = (struct node *)malloc(sizeof(struct node));
-	return next;
-}
 
 struct node* deleteNode(struct node *start, int *data)
 {
@@ -247,12 +236,35 @@ struct node *get_position(struct node *start, int position)
     return p;
 }
 
-struct node *insert_node(struct node * parent)
+struct node *insert_node(struct node * parent, int data)
 {
 	struct node *temp;
 	temp = (struct node *)malloc(sizeof(struct node));
-
+	temp->info = data;
 	temp->link = parent->link;
 	parent->link = temp;
 	return temp;
+}
+
+void insertAfter(struct node *start, int data, int x)
+{
+	struct node *temp, *p;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->info = data;
+	p = start;
+	while (p != NULL)
+	{
+		if (p->info == x)
+			break;
+		p = p->link;
+	}
+	temp->link = p->link;
+	p->link = temp;
+}
+
+struct node* insertBefore(struct node *start, int data, int x)
+{
+	struct node* next;
+	next = (struct node *)malloc(sizeof(struct node));
+	return next;
 }
