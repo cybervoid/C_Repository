@@ -74,3 +74,71 @@ int size()
 {
 	return top + 1;
 }
+
+int isEmpty()
+{
+	if (top == -1)
+		return 1;
+	else
+		return 0;
+}
+
+int isFull()
+{
+	if (top == MAX - 1)
+		return 1;
+	else 
+		return 0;
+}
+
+void push(int x)
+{
+	if (isFull())
+	{
+		printf("error: Stack overflow \n");
+		return;
+	}
+	top = top + 1;
+	a[top] = x;
+}
+
+int pop()
+{
+	int x;
+	if (isEmpty())
+	{
+		printf("error: stack underflow");
+		exit(1);
+	}
+	x = a[top];
+	top = top - 1;
+	return x;
+}
+
+int peek()
+{
+	if (isEmpty())
+	{
+		printf("error: stack underflow\n");
+		exit(1);
+	}
+	return a[top];
+}
+
+void display()
+{
+	int i;
+
+	printf("top=%d\n", top);
+
+	if (isEmpty())
+	{
+		printf("Stack is empty\n");
+		return;
+	}
+	printf("stack is : \n\n");
+	for (i = top; i >= 0; i--)
+		printf(" %d\n", a[i]);
+
+	printf("\n");
+}
