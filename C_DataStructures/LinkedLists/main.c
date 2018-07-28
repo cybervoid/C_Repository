@@ -6,7 +6,7 @@ struct node
 {
 	int info;	
 	struct node *link;
-};
+} *node;
 
 
 void displayList(struct node *start)
@@ -61,16 +61,16 @@ struct node* secondToLastNode(struct node start)
 }
 void insertAtEnd(struct node start, int data)
 {
-	struct node* p = start;
+	struct node* p, temp;
+        temp = (struct node *)malloc(sizeof(struct node));
+        temp->info=data;
+        
+        p = start;
 	while(p->link != NULL)
 	{
-		p = p->link;
+            p = p->link;
 	}
-
-	struct node* temp;
-	temp = (struct node *)malloc(sizeof(struct node));
 	p->link = temp;
-	p->info = data;
 	temp->link = NULL;
 }
 struct node* create_node(int data)
@@ -86,10 +86,8 @@ struct node *insertInBeginning(struct node start, int data)
 	struct node *temp;
 	temp = (struct node *)malloc(sizeof(struct node));
 	temp->info = data;
-
 	temp->link = start;
 	start = temp;
-
 	return start;
 }
 //struct node* createNode(struct node *start, int *data)
