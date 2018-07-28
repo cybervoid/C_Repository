@@ -10,6 +10,7 @@ struct node *insert_node(struct node *);
 void insertAfter(struct node *, int, int );
 struct node* insertBefore(struct node *, int, int);
 struct node* insertAtPosition(struct node *, int, int);
+struct node* deleteNode(struct node *, int);
 struct node
 {
 	int info;	
@@ -104,12 +105,6 @@ void search(struct node *start, int x)
 	else
 		printf("%d is at position %d\n", x, position);
 	
-}
-
-
-struct node* deleteNode(struct node *start, int *data)
-{
-
 }
 
 struct node* reverseList(struct node *start) 
@@ -298,5 +293,44 @@ struct node* insertAtPosition(struct node *start, int data, int k_position)
 
 	temp->link = p->link;
 	p->link = temp;
+	return start;
+}
+
+
+struct node* deleteNode(struct node *start, int dataToDelete)
+{
+	struct node *temp, *p;
+
+	if (start == NULL)
+	{
+		printf("list is empty");
+		return start;
+	}
+	//deletion of first node
+	if (start->info == dataToDelete)
+	{
+		temp = start; 
+		start = start->link;
+		free(temp);
+		return start;
+	}
+	//deletion in between or at the end
+	p = start;
+	while (p->link != NULL)
+	{
+		if (p->link->info == dataToDelete)
+			break;
+		
+		p = p->link;
+	}
+
+	if (p->link == NULL)
+		printf("element %d not in list\n\n", dataToDelete);
+	else 
+	{
+		temp = p->link;
+		p->link = temp->link;
+		free(temp);
+	}
 	return start;
 }
