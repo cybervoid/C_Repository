@@ -137,7 +137,7 @@ int main(int argc, char** argv)
 		printf("[9] Delete a node\n");
 		printf("[10] Reverse the list\n");
 		
-		printf("Enter your choice:");
+		printf("Enter your choice: ");
 		scanf("%d", &choice);
 		if (choice >= 11)
 			break;
@@ -186,14 +186,14 @@ int main(int argc, char** argv)
 				scanf("%d", &k);
 				start = insertAtPosition(start, data, k);
                 break;
-		//	case 9:
-		//		printf("Enter the element to be deleted:");
-		//		scanf("%d", &data);
-		//		start = deleteNode(start, data);
-		//		break;
-		//	case 10:
-		//		start = reverseList(start, data);
-		//		break;
+			case 9:
+				printf("Enter the element to be deleted:");
+				scanf("%d", &data);
+				start = deleteNode(start, data);
+				break;
+			case 10:
+				start = reverseList(start, data);
+				break;
 			default:
 				printf("Invalid Choice Selected\n");
 				break;
@@ -249,8 +249,7 @@ struct node *insert_node(struct node * parent, int data)
 void insertAfter(struct node *start, int data, int x)
 {
 	struct node *temp, *p;
-	temp = (struct node *)malloc(sizeof(struct node));
-	temp->info = data;
+	
 	p = start;
 	while (p != NULL)
 	{
@@ -258,8 +257,15 @@ void insertAfter(struct node *start, int data, int x)
 			break;
 		p = p->link;
 	}
-	temp->link = p->link;
-	p->link = temp;
+	if (p == NULL)
+		print("%d not present in the list\n", x);
+	else 
+	{
+		temp = (struct node *)malloc(sizeof(struct node));
+		temp->info = data;
+		temp->link = p->link;
+		p->link = temp;
+	}
 }
 
 struct node* insertBefore(struct node *start, int data, int x)
