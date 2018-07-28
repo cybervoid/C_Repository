@@ -9,7 +9,7 @@ struct node *get_position(struct node *, int);
 struct node *insert_node(struct node *);
 void insertAfter(struct node *, int, int );
 struct node* insertBefore(struct node *, int, int);
-
+struct node* insertAtPosition(struct node *, int, int);
 struct node
 {
 	int info;	
@@ -132,7 +132,7 @@ int main(int argc, char** argv)
 		printf("[4] Add to empty list / Add at beginning\n");
 		printf("[5] Add a node at end of the list\n");
 		printf("[6] Add a node after a specified node\n");
-		printf("[7] Add a node before a specified node");
+		printf("[7] Add a node before a specified node\n");
 		printf("[8] Add a node at a given position\n");
 		printf("[9] Delete a node\n");
 		printf("[10] Reverse the list\n");
@@ -151,40 +151,40 @@ int main(int argc, char** argv)
 				countNodes(start);
 				break;
 			case 3:
-				printf("Enter the element to be searched:");
+				printf("Enter the element to be searched: ");
 				scanf("%d", &data);
 				search(start, data);
 				break;
 			case 4:
-				printf("Enter the element to be inserted:");
+				printf("Enter the element to be inserted: ");
 				scanf("%d", &data);
 				start = insertInBeginning(start, data);
 				break;
 			case 5:
-				printf("Enter the element to be inserted:");
+				printf("Enter the element to be inserted: ");
 				scanf("%d", &data);
 				insertAtEnd(start, data);
 				break;
 			case 6: 
-				printf("Enter the element to be inserted:");
+				printf("Enter the element to be inserted: ");
 				scanf("%d", &data);
-				printf("Enter the element after which to insert:");
+				printf("Enter the element after which to insert: ");
 				scanf("%d", &x);
 				insertAfter(start, data, x);
 				break;
 			case 7:
-				printf("Enter the element to be inserted:");
+				printf("Enter the element to be inserted: ");
 				scanf("%d", &data);
-				printf("Enter the element before which to insert:");
+				printf("Enter the element before which to insert: ");
 				scanf("%d", &x);
 				start = insertBefore(start, data, x);
 				break;
 			case 8:
-				printf("Enter the element to be inserted:");
+				printf("Enter the element to be inserted: ");
 				scanf("%d", &data);
-				printf("Enter the position at which to be inserted:");
+				printf("Enter the position at which to be inserted: ");
 				scanf("%d", &k);
-				//start = insertAtPosition(start, data, k);
+				start = insertAtPosition(start, data, k);
                 break;
 		//	case 9:
 		//		printf("Enter the element to be deleted:");
@@ -264,7 +264,33 @@ void insertAfter(struct node *start, int data, int x)
 
 struct node* insertBefore(struct node *start, int data, int x)
 {
-	struct node* next;
-	next = (struct node *)malloc(sizeof(struct node));
-	return next;
+	struct node *temp, *p;
+	temp = (struct node *)malloc(sizeof(struct node));
+	p = start;
+	while (p->link != NULL)
+	{
+		if (p->link->info == x)
+			break;
+		p = p->link;
+	}
+
+	temp->link = p->link;
+	p->link = temp;
+	temp->info = data;
+	return temp;
+}
+struct node* insertAtPosition(struct node *start, int data, int k_position)
+{
+	struct node *temp, *p;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->info = data;
+	p = start;
+	for (int i = 1; i < k_position - 1 && p != NULL; i++)
+	{
+		p = p->link;
+	}
+
+	temp->link = p->link;
+	p->link = temp;
+	return start;
 }
