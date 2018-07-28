@@ -6,6 +6,8 @@
 struct node *insertInBeginning(struct node *, int);
 void insertAtEnd(struct node *, int);
 struct node *get_position(struct node *, int);
+struct node *insert_node(struct node *);
+
 struct node
 {
 	int info;	
@@ -26,7 +28,7 @@ void displayList(struct node *start)
 	p = start; 	
 	while (p != NULL)
 	{
-		printf("%d", p->info);
+		printf("%d ", p->info);
 		p = p->link;
 	}
 	printf("\n");
@@ -111,7 +113,8 @@ void insertAfter(struct node *start, int *data, int *x)
 
 struct node* insertBefore(struct node *start, int *data, int *x)
 {
-	struct node* next;
+	struct node* next;	
+	next = (struct node *)malloc(sizeof(struct node));
 	return next;
 }
 
@@ -124,6 +127,7 @@ struct node* reverseList(struct node *start)
 {
 
 }
+
 int main(int argc, char** argv)
 {
 	struct node *start = NULL; //declare a new linked list
@@ -153,8 +157,10 @@ int main(int argc, char** argv)
 		{
 			case 1:
 				displayList(start);
+				break;
 			case 2:
 				countNodes(start);
+				break;
 			case 3:
 				printf("Enter the element to be searched:");
 				scanf("%d", &data);
@@ -183,13 +189,14 @@ int main(int argc, char** argv)
 				printf("Enter the element before which to insert:");
 				scanf("%d", &x);
 				start = insertBefore(start, data, x);
+				break;
 			case 8:
 				printf("Enter the element to be inserted:");
 				scanf("%d", &data);
 				printf("Enter the position at which to be inserted:");
 				scanf("%d", &k);
 				//start = insertAtPosition(start, data, k);
-                                break;
+                break;
 		//	case 9:
 		//		printf("Enter the element to be deleted:");
 		//		scanf("%d", &data);
@@ -200,6 +207,7 @@ int main(int argc, char** argv)
 		//		break;
 			default:
 				printf("Invalid Choice Selected\n");
+				break;
 		}
 	}
 }
@@ -237,4 +245,14 @@ struct node *get_position(struct node *start, int position)
         p = p->link;
     }
     return p;
+}
+
+struct node *insert_node(struct node * parent)
+{
+	struct node *temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+
+	temp->link = parent->link;
+	parent->link = temp;
+	return temp;
 }
