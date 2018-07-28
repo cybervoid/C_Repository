@@ -2,11 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+struct node *insertInBeginning(struct node *, int);
+void insertAtEnd(struct node *, int);
 struct node
 {
 	int info;	
 	struct node *link;
-} *node;
+};
 
 
 void displayList(struct node *start)
@@ -51,27 +54,13 @@ struct node* createList(struct node *start)
 	return start;
 }
 
-struct node* secondToLastNode(struct node start)
+struct node* secondToLastNode(struct node *start)
 {
-	struct node* p = start;
+	struct node *p = start;
 	while (p->link->link != NULL)
 		p = p->link;
 
 	return p;
-}
-void insertAtEnd(struct node start, int data)
-{
-	struct node* p, temp;
-        temp = (struct node *)malloc(sizeof(struct node));
-        temp->info=data;
-        
-        p = start;
-	while(p->link != NULL)
-	{
-            p = p->link;
-	}
-	p->link = temp;
-	temp->link = NULL;
 }
 struct node* create_node(int data)
 {
@@ -81,18 +70,7 @@ struct node* create_node(int data)
 	return temp;
 }
 
-struct node *insertInBeginning(struct node start, int data)
-{ 
-	struct node *temp;
-	temp = (struct node *)malloc(sizeof(struct node));
-	temp->info = data;
-	temp->link = start;
-	start = temp;
-	return start;
-}
-//struct node* createNode(struct node *start, int *data)
-//{
-//}
+
 void countNodes(struct node *start)
 {
 	int n = 0;
@@ -220,4 +198,27 @@ int main(int argc, char** argv)
 				printf("Invalid Choice Selected\n");
 		}
 	}
+}
+struct node *insertInBeginning(struct node *start, int data)
+{ 
+	struct node *temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->info = data;
+	temp->link = start;
+	start = temp;
+	return start;
+}
+void insertAtEnd(struct node *start, int data)
+{
+	struct node *p, *temp;
+        temp = (struct node *)malloc(sizeof(struct node));
+        temp->info=data;
+        
+        p = start;
+	while(p->link != NULL)
+	{
+            p = p->link;
+	}
+	p->link = temp;
+	temp->link = NULL;
 }
