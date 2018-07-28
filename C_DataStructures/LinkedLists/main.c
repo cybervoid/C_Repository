@@ -5,6 +5,7 @@
 
 struct node *insertInBeginning(struct node *, int);
 void insertAtEnd(struct node *, int);
+struct node *get_position(struct node *, int);
 struct node
 {
 	int info;	
@@ -101,6 +102,8 @@ void search(struct node *start, int x)
 	
 }
 
+
+
 void insertAfter(struct node *start, int *data, int *x)
 {
 
@@ -180,12 +183,13 @@ int main(int argc, char** argv)
 				printf("Enter the element before which to insert:");
 				scanf("%d", &x);
 				start = insertBefore(start, data, x);
-			//case 8:
-			//	printf("Enter the element to be inserted:");
-		//		scanf("%d", &data);
-		//		printf("Enter the position at which to be inserted:");
-		//		scanf("%d", &k);
-		//		start = insertAtPosition(start, data, k);
+			case 8:
+				printf("Enter the element to be inserted:");
+				scanf("%d", &data);
+				printf("Enter the position at which to be inserted:");
+				scanf("%d", &k);
+				//start = insertAtPosition(start, data, k);
+                                break;
 		//	case 9:
 		//		printf("Enter the element to be deleted:");
 		//		scanf("%d", &data);
@@ -221,4 +225,16 @@ void insertAtEnd(struct node *start, int data)
 	}
 	p->link = temp;
 	temp->link = NULL;
+}
+
+struct node *get_position(struct node *start, int position)
+{
+    struct node* p;
+    p = (struct node *)malloc(sizeof(struct node));
+    p = start;
+    for(int i = 1; i < position && p !=NULL; i++)
+    {
+        p = p->link;
+    }
+    return p;
 }
