@@ -18,5 +18,11 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stack_array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stack_linked_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
