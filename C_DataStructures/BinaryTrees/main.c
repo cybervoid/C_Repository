@@ -18,7 +18,9 @@
 void preorder(struct node *);
 void inorder(struct node *);
 void postorder(struct node *);
-
+void insertQueue(struct node *);
+int queueEmpty();
+struct node *deleteQueue(struct node *);
 struct node
 {
     struct node *lchild;
@@ -32,7 +34,7 @@ struct node
 
 int main(int argc, char** argv) 
 {
-    return (EXIT_SUCCESS);
+    return (0);
 }
 
 //preorder traversal -> n, l, r
@@ -67,4 +69,38 @@ void postorder(struct node *p)
     postorder(p->lchild); 
     postorder(p->rchild);
     printf("%c ", p->info);
+}
+
+//traverse node using level order
+void level_order(struct node *p)
+{
+	if (p == NULL)
+	{
+		printf("Tree is empty\n");
+		return;
+	}
+	insertQueue(p);
+
+	while (!queueEmpty()) 
+	{
+		p = deleteQueue(p);
+		printf("%c ", p->info);
+		if (p->lchild != NULL)
+			insertQueue(p->lchild);
+		if (p->rchild != NULL)
+			insertQueue(p->rchild);
+	}
+}
+void insertQueue(struct node *p) 
+{
+
+}
+int queueEmpty()
+{
+
+}
+
+struct node *deleteQueue(struct node *p)
+{
+
 }
