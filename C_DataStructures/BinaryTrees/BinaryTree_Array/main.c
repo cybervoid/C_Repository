@@ -14,11 +14,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * 
- */
+
+void preorder_traversal(struct node *);
+
+struct node
+{
+    struct node *lchild;
+    char info;
+    struct node *rchild;
+};
+
+// parent: k/2
+// right 2k
+// left 2k+1
+
 int main(int argc, char** argv) 
 {
     return (EXIT_SUCCESS);
 }
 
+//preorder traversal -> n, l, r
+void preorder_traversal(struct node *p)
+{
+    
+    if(p == NULL)
+        return;
+    
+    printf("%c ", p->info);
+    preorder_traversal(p->lchild); 
+    preorder_traversal(p->rchild);
+}
