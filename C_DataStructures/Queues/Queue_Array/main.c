@@ -10,6 +10,7 @@ int isFull();
 int isEmpty();
 int size();
 int peek();
+void display();
 int front, rear;
 int a[MAX];
 int main()
@@ -47,7 +48,7 @@ int main()
 				printf("Popped element is: %d\n", x);
 				break;
 			case 3:
-				printf("Print Element at front of queue", peek());
+				printf("Element at front of queue: %d\n", peek());
 				break;
 			case 4:
 				display();
@@ -62,16 +63,7 @@ int main()
 	}
 }
 
-void enqueue(int x)
-{
-	rear = rear + 1;
-	if (rear > MAX)
-	{
-		printf("queue overflow");
-		exit(1);
-	}
-	a[rear] = x;
-}
+
 void initializeQueue()
 {
 	front = -1;
