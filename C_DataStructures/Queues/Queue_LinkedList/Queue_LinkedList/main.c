@@ -72,3 +72,88 @@ void initializeQueue()
 	front = NULL;
 	rear = NULL;
 }
+
+int size()
+{
+	int s = 0;
+	struct node *p = front;
+	while (p != NULL)
+	{
+		s++;
+		p = p->link;
+	}
+	return s;
+}
+
+void enqueue(int x)
+{
+	struct node *temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	if (temp == NULL)
+	{
+		printf("Memory not available\n");
+		return;
+	}
+	temp->info = x;
+	temp->link = NULL;
+
+	if (front == NULL)
+		front = temp;
+	else
+		rear->link = temp;
+	rear = temp;
+}
+
+int dequeue()
+{
+	struct node *temp;
+	int x;
+	if (isEmpty())
+	{
+		printf("Queue underflow\n");
+		exit(1);
+	}
+
+	temp=front;
+	x = temp->info;
+	front = front->link;
+	free(temp);
+	return x;
+}
+
+int peek()
+{
+	if (isEmpty())
+	{
+		printf("queue underflow\n");
+		exit(1);
+	}
+	return front->info;
+}
+
+int isEmpty()
+{
+	if (front == NULL)
+		return 1;
+	else
+		return 0;
+}
+
+void display()
+{
+	struct node *p;
+	p = front; 
+	if (isEmpty())
+	{
+		printf("queue is empty\n");
+		return;
+	}
+	printf("Queue is:\n\n");
+	while (p != NULL)
+	{
+		printf("%d ", p->info);
+		p = p->link;
+	}
+
+	printf("\n\n");
+}
