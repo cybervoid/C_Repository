@@ -15,7 +15,8 @@
 #include <stdlib.h>
 
 
-void preorder_traversal(struct node *);
+void preorder(struct node *);
+void inorder(struct node *);
 
 struct node
 {
@@ -34,13 +35,35 @@ int main(int argc, char** argv)
 }
 
 //preorder traversal -> n, l, r
-void preorder_traversal(struct node *p)
+void preorder(struct node *p)
 {
     
     if(p == NULL)
         return;
     
     printf("%c ", p->info);
-    preorder_traversal(p->lchild); 
-    preorder_traversal(p->rchild);
+    preorder(p->lchild); 
+    preorder(p->rchild);
+}
+
+//inorder traversal -> l, n, r
+void inorder(struct node *p)
+{
+    if(p == NULL)
+        return;
+    
+    inorder(p->lchild); 
+    printf("%c ", p->info);
+    inorder(p->rchild);
+}
+
+//inorder traversal -> l, r, n
+void postorder(struct node *p)
+{
+    if(p == NULL)
+        return;
+    
+    postorder(p->lchild); 
+    postorder(p->rchild);
+    printf("%c ", p->info);
 }
