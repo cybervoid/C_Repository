@@ -17,6 +17,7 @@
 
 void preorder(struct node *);
 void inorder(struct node *);
+void postorder(struct node *);
 
 struct node
 {
@@ -57,7 +58,7 @@ void inorder(struct node *p)
     inorder(p->rchild);
 }
 
-//inorder traversal -> l, r, n
+//postorder traversal -> l, r, n
 void postorder(struct node *p)
 {
     if(p == NULL)
