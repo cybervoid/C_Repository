@@ -15,7 +15,8 @@
 #include <stdlib.h>
 
 
-struct node *search(struct node *, int);
+struct node *search_recursive(struct node *, int);
+struct node *search_while(struct node *, int);
 struct node
 {
     int info;
@@ -27,7 +28,7 @@ int main() {
     return (0);
 }
 
-struct node *search(struct node *p, int target)
+struct node *search_recursive(struct node *p, int target)
 {
     if(p == NULL)
     {
@@ -42,4 +43,19 @@ struct node *search(struct node *p, int target)
     
     if(target > p->info)
         search(p->rchild, target);
+}
+
+struct node *search_while(struct node *p, int target)
+{
+    
+    while(p != NULL)
+    {
+        if(target < p->info)
+            p = p->lchild;
+        else if(target > p->info)
+            p=p->rchild;
+        else
+            return p;
+    }
+    return NULL;
 }
