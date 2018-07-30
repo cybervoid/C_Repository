@@ -17,6 +17,8 @@
 
 struct node *search_recursive(struct node *, int);
 struct node *search_while(struct node *, int);
+struct node *Min(struct node *);
+struct node *Max(struct node *);
 struct node
 {
     int info;
@@ -58,4 +60,22 @@ struct node *search_while(struct node *p, int target)
             return p;
     }
     return NULL;
+}
+
+struct node *Min(struct node *p)
+{
+	if (p == NULL)
+		return NULL;
+	while (p->lchild != NULL)
+		p = p->lchild;
+	return p;
+}
+
+struct node *Max(struct node *p)
+{
+	if (p == NULL)
+		return NULL;
+	while (p->rchild != NULL)
+		p = p->rchild;
+	return p;
 }
