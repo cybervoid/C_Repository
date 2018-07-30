@@ -20,6 +20,7 @@ void inorder(struct node *);
 void postorder(struct node *);
 void insertQueue(struct node *);
 int queueEmpty();
+int height(struct node *);
 struct node *deleteQueue(struct node *);
 struct node
 {
@@ -90,6 +91,21 @@ void level_order(struct node *p)
 		if (p->rchild != NULL)
 			insertQueue(p->rchild);
 	}
+}
+int height(struct node *p)
+{
+	int hL, hR;
+
+	if (p == NULL)
+		return 0;
+
+	hL = height(p->lchild);
+	hR = height(p->rchild);
+
+	if (hL > hR)
+		return 1 + hL;
+	else
+		return 1 + hR;
 }
 void insertQueue(struct node *p) 
 {
