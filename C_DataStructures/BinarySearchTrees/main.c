@@ -41,11 +41,14 @@ struct node *search_recursive(struct node *p, int target)
         return p;
     
     if(target < p->info)
-        search(p->lchild, target);
+        return search_recursive(p->lchild, target);
     
     if(target > p->info)
-        search(p->rchild, target);
+        return search_recursive(p->rchild, target);
+
+	return NULL;
 }
+
 
 struct node *search_while(struct node *p, int target)
 {
