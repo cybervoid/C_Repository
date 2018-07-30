@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=BinaryTree_Array
+PROJECTNAME=BinaryTrees
 
 # Active Configuration
 DEFAULTCONF=Debug

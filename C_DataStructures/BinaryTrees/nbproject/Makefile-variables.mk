@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=binarytree_array
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/binarytree_array
+CND_ARTIFACT_NAME_Debug=binarytrees
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/binarytrees
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=binarytreearray.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/binarytreearray.tar
+CND_PACKAGE_NAME_Debug=binarytrees.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/binarytrees.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=binarytree_array
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/binarytree_array
+CND_ARTIFACT_NAME_Release=binarytrees
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/binarytrees
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=binarytreearray.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/binarytreearray.tar
+CND_PACKAGE_NAME_Release=binarytrees.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/binarytrees.tar
 #
 # include compiler specific variables
 #

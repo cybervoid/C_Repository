@@ -15,12 +15,12 @@
 #include <stdlib.h>
 
 
-struct node *getnode(char x);
-void display(struct node *p, int level);
+struct node *getnode(char);
+void display(struct node *, int);
 void preorder(struct node *);
 void inorder(struct node *);
 void postorder(struct node *);
-void level_order(struct node *p);
+void level_order(struct node *);
 int height(struct node *);
 
 #define MAX 100
@@ -41,17 +41,17 @@ struct node
 // right 2k
 // left 2k+1
 
-int main(int argc, char** argv) 
+int main() 
 {
     struct node *root = NULL;
-    
+    printf("check1");
     root = getnode('P');
     root->lchild = getnode('Q');
     root->rchild = getnode('R');
     root->lchild->lchild = getnode('A');
     root->lchild->rchild = getnode('B');
     root->rchild->lchild = getnode('X');
-    
+    printf("check2");
     display(root, 0);
     printf("\n\n");
     
