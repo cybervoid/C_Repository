@@ -13,8 +13,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-
-
 struct node *getnode(char);
 void display(struct node *, int);
 void preorder(struct node *);
@@ -43,15 +41,14 @@ struct node
 
 int main() 
 {
-    struct node *root = NULL;
-    printf("check1");
+    struct node *root;
+    root = NULL;//(struct node*)malloc(sizeof(struct node)); 
     root = getnode('P');
     root->lchild = getnode('Q');
     root->rchild = getnode('R');
     root->lchild->lchild = getnode('A');
     root->lchild->rchild = getnode('B');
     root->rchild->lchild = getnode('X');
-    printf("check2");
     display(root, 0);
     printf("\n\n");
     
@@ -90,11 +87,11 @@ void preorder(struct node *p)
 
 struct node *getnode(char c)
 {
-    struct node *p;
-    p = (struct node *)malloc(sizeof(struct node));
+    struct node *p = (struct node *)malloc(sizeof(struct node));
     p->info = c;
     p->lchild = NULL;
     p->rchild = NULL;
+    return p;
 }
 
 void display(struct node *p, int level)
@@ -105,9 +102,10 @@ void display(struct node *p, int level)
     display(p->rchild, level+1);
     printf("\n");
     for(i=0; i<level; i++)
-        printf("    ");
+        printf("  ");
     printf("%c", p->info);
     display(p->lchild, level+1);
+
 }
 //inorder traversal -> l, n, r
 void inorder(struct node *p)
