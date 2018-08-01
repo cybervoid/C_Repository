@@ -29,7 +29,7 @@ int main()
     int n = 0; //size of heap
     int choice, value;
     
-    a[0] = LARGE_VALUE; //sentinal, all keys in heap should be less than this
+    a[0] = LARGE_VALUE; //sentinel, all keys in heap should be less than this
     
     while(1)
     {
@@ -84,7 +84,9 @@ void restoreUp(int a[], int i)
 {
     int k = a[i];
     int iparent = i / 2;
-    while(a[iparent]<k) 
+    //without sentinel, use these conditions:
+    //while(iparent >=1 && a[iparent]<k)
+    while(a[iparent]<k)        
     {
         a[i]=a[iparent];
         i=iparent;
@@ -97,4 +99,5 @@ int deleteRoot(int a[], int *pn)
 {
     int maxValue = a[1];
     a[1]=a[*pn];
+    
 }
