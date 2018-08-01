@@ -73,3 +73,28 @@ int main()
     return 0;
 }
 
+void insert(int value, int a[], int *pn)
+{
+    (*pn)++;
+    a[*pn]=value;
+    restoreUp(a, *pn);
+}
+
+void restoreUp(int a[], int i)
+{
+    int k = a[i];
+    int iparent = i / 2;
+    while(a[iparent]<k) 
+    {
+        a[i]=a[iparent];
+        i=iparent;
+        iparent = i/2;
+    }
+    a[i]=k;
+}
+
+int deleteRoot(int a[], int *pn)
+{
+    int maxValue = a[1];
+    a[1]=a[*pn];
+}
