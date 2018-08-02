@@ -99,5 +99,41 @@ int deleteRoot(int a[], int *pn)
 {
     int maxValue = a[1];
     a[1]=a[*pn];
+    (*pn)--;
+    restoreDown(a,1,*pn);
+    return maxValue;
+}
+
+void restoreDown(int a[], int i, int n)
+{
+    int k = a[i];
+    int lchild = 2*i, rchild=lchild+1;
     
+    while(rchild <= n)
+    {
+        if(k >= a[lchild] && k >= a[rchild])
+        {
+            a[i] = k;
+            return;
+        }
+        else if(a[lchild] > a[rchild])
+        {
+            a[i] = a[lchild];
+            i = lchild;
+        }
+        else
+        {
+            a[i] = a[rchild];
+            i = rchild;
+        }
+        lchild = 2 * i;
+        rchild = lchild + 1;
+    }
+    //if number of nodes is even
+    if(lchild == n && k < a[lchild])
+    {
+        a[i] = a[lchild];  
+        i = lchild;
+    }
+    a[i] = k;
 }
