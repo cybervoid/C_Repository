@@ -14,11 +14,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+void insert(int value);
 struct node *search_recursive(struct node *, int);
 struct node *search_while(struct node *, int);
 struct node *Min(struct node *);
 struct node *Max(struct node *);
+struct node *getnode(char);
 struct node
 {
     int info;
@@ -49,7 +50,14 @@ struct node *search_recursive(struct node *p, int target)
 	return NULL;
 }
 
-
+struct node *getnode(char c)
+{
+	struct node *p = (struct node *)malloc(sizeof(struct node));
+	p->info = c;
+	p->lchild = NULL;
+	p->rchild = NULL;
+	return p;
+}
 struct node *search_while(struct node *p, int target)
 {
     
@@ -63,6 +71,30 @@ struct node *search_while(struct node *p, int target)
             return p;
     }
     return NULL;
+}
+
+void insert(struct node *root, int x)
+{
+	struct node *temp, *parent, *p;
+
+	p = root;
+	parent = NULL;
+
+	while (p != NULL)
+	{
+		parent = p;
+		if (x < p->info)
+			p = p->lchild;
+		else if (x > p->info)
+			p = p->rchild;
+		else
+		{
+			printf("%d already present in the tree\n", x);
+			return root;
+		}
+
+		temp = getnode(x);
+	}
 }
 
 struct node *Min(struct node *p)
