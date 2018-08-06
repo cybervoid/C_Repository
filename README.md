@@ -2,10 +2,7 @@
 A repository for writing code in C
 
 ## Overview
-This repository intends to create a working set of nodes between two (or more) devices (Raspberry Pi's). Its specifically intends to cover the various topics necessary for a strong understanding in computer science.
-
-#### Note
-Some fundamentals will also be covered using the [Go programming](https://github.com/cybervoid/GoRepository) language.
+This repository intends to cover the various topics necessary for a stronger understanding in computer science.
 
 ## Repository Contents
 1. [C_Beginners](./C_Beginners) - a repository for C programming beginners, based upon Udemy C Programming. See [Resources Section](#resources) class for C beginners.
@@ -16,6 +13,7 @@ Some fundamentals will also be covered using the [Go programming](https://github
 3. [Advanced_Pointers](./Advanced_Pointers) - Based upon the Udemy course [Advanced C Programming - Pointers](https://www.udemy.com/advanced-c-programming-pointers/learn/v4/). Includes Netbeans and Visual Studio workspace.
 4. [PThreads](./PThreads) - a simple project with a pthread example.
 5. [RaspberryPI_Setup](./RaspberryPI_Setup) -  Setup instructions for raspberry pi setup
+6. [C_DataStructures](./C_DataStructures) - a workspace to review the fundamental computer science concept of data structures.
 
 ## Quick Reference
 1. Pointers and memory addresses | [Example](https://github.com/cybervoid/C_Repository/blob/master/Advanced_Pointers/main.c#L30)
