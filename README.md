@@ -1,5 +1,5 @@
 # C_Repository
-A repository for writing code in C
+A repository for writing code in C. 
 
 ## Overview
 This repository intends to cover the various topics necessary for a stronger understanding in computer science.
